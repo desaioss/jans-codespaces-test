@@ -46,11 +46,21 @@ write_landing_page() {
     if [ -f cedarling-python/cedarling_python.html ]; then
         entries+=("cedarling-python/cedarling_python.html|Cedarling Python")
     fi
+    if [ -f cedarling-c/index.html ]; then
+        entries+=("cedarling-c/index.html|Cedarling C")
+    fi
+    if [ -f cedarling-go/cedarling_go.html ]; then
+        entries+=("cedarling-go/cedarling_go.html|Cedarling Go")
+    fi
+    if [ -f cedarling-js/index.html ]; then
+        entries+=("cedarling-js/index.html|Cedarling JavaScript/TypeScript")
+    fi
     local page
     while IFS= read -r page; do
         entries+=("${page#./}|${page#./}")
     done < <(find . -mindepth 2 -name index.html \
-        -not -path "./cedarling/*" -not -path "./.git/*" | sort)
+        -not -path "./cedarling/*" -not -path "./cedarling-c/*" -not -path "./cedarling-js/*" \
+        -not -path "./.git/*" | sort)
 
     {
         echo '<!DOCTYPE html>'
