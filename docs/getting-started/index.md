@@ -2,7 +2,7 @@
 title: Get Started
 ---
 
-# Get Started with Janssen server
+# Get Started with Janssen
 
 Welcome to the Janssen Project documentation. Use the sidebar to explore
 all sections, or jump directly to common starting points:
